@@ -18,10 +18,6 @@ A lightweight SketchUp extension that allows users to instantly save a copy of t
 
 Go to **Extensions** (or **Plugins**) > **Save to SketchUp 2013**.
 
-## AI Assistance Note
-
-This extension was developed with the assistance of **Antigravity AI** by Google DeepMind.
-
 ## License
 
 Copyright (c) 2026 Arman Arisman.
