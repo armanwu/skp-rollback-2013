@@ -1,12 +1,19 @@
 # frozen_string_literal: true
+#
+# SKP Rollback to 2013
+# Copyright (c) 2026 Arman Arisman
+# Licensed under the MIT License.
+#
 
 require 'sketchup.rb'
 
 module SKPRollback
+  COPYRIGHT = "© 2026 Arman Arisman. Released under the MIT License."
+
   def self.save_to_2013
     model = Sketchup.active_model
     unless model
-      UI.messagebox('No active SketchUp model found.')
+      UI.messagebox("SKP Rollback to 2013\n\nNo active SketchUp model found.\n\n#{COPYRIGHT}", MB_OK)
       return
     end
 
@@ -25,12 +32,12 @@ module SKPRollback
 
     status = model.save_copy(target_path, Sketchup::Model::VERSION_2013)
     if status
-      UI.messagebox("Successfully saved to SketchUp 2013:\n#{target_path}")
+      UI.messagebox("SKP Rollback to 2013\n\nSuccessfully saved model copy to:\n#{target_path}\n\n#{COPYRIGHT}", MB_OK)
     else
-      UI.messagebox("Failed to save file to SketchUp 2013.")
+      UI.messagebox("SKP Rollback to 2013\n\nFailed to save file to SketchUp 2013.\n\n#{COPYRIGHT}", MB_OK)
     end
   rescue => e
-    UI.messagebox("Error saving to SketchUp 2013:\n#{e.message}")
+    UI.messagebox("SKP Rollback to 2013\n\nError saving to SketchUp 2013:\n#{e.message}\n\n#{COPYRIGHT}", MB_OK)
   end
 
   unless file_loaded?(__FILE__)
